@@ -1,17 +1,14 @@
-# Password Protector - startkode
+
 import hashlib
 
-# Funksjon som skal hashe et passord
 def hash_password(password):
-    # fullfør koden her
-    return ??? #fullfør koden her
+    encrypted_password = hashlib.sha256(password.encode())
+    encrypted_password = encrypted_password.hexdigest()
+    return encrypted_password
 
-# Main program starter her
 password = input("Skriv inn et passord: ")
 
-# Kall funksjonen for å hashe passordet
-hashed_password = hash_password(password)
+encrypted_password = hash_password(password)
 
-# Output
 print("Originalt passord:", password)
-print("Hashet passord:", hashed_password)
+print("Hashet passord:", encrypted_password)
